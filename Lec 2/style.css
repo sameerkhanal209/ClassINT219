@@ -1,0 +1,102 @@
+body{
+    margin:0;
+    padding:0;
+}
+header,
+main,
+footer{
+    padding: 20px 0;
+}
+
+header{
+    background-color: beige;
+    padding: 20px;
+
+    text-align: center;
+}
+
+header h1{
+    margin:0;
+}
+
+.main-holder{
+    display: flex;
+}
+
+.main-holder .navigation{
+    max-width: 250px;
+    width: 100%;
+    margin: 20px;
+
+    position: fixed;
+}
+
+.main-holder .navigation ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+.main-holder .navigation ul li a{
+    text-decoration: none;
+    background-color: beige;
+    display: block;
+    padding: 10px;
+    border-bottom: 2px solid rgb(207, 207, 207);
+}
+
+.main-holder ul li a:hover{
+    border-color: aqua;
+}
+
+.main-section{
+    margin: 20px;
+    margin-left: 350px;
+}
+.main-nav{
+    padding: 30px 0;
+}
+.main-nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li{
+    display: inline-block;
+}
+
+.main-nav ul li a{
+    text-decoration: none;
+    background-color: beige;
+    display: inline-block;
+    padding: 10px 40px;
+    border-bottom: 2px solid rgb(207, 207, 207);
+}
+
+table td{
+    padding: 20px;
+}
+
+footer{
+    text-align: center;
+}
+
+.footer-nav{
+    padding: 20px 0;
+}
+
+.footer-nav ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+.footer-nav ul li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.footer-nav ul li a{
+
+}

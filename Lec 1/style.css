@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    margin:0;
+    padding:0;
+}
+header{
+    text-align: center;
+}
+.menu{
+    padding: 0 30px;
+    background-color: rgb(209, 194, 194);
+}
+.menu ul{
+    padding:0;
+    margin:0;
+}
+.menu ul li{
+    list-style-type: none;
+    display: block;
+    margin:10px 0;
+}
+
+.menu ul li a{
+    text-decoration: none;
+}
+
+main{
+    display: flex;
+}
+
+.main-page{
+    padding:0 20px;
+    margin:0 20px;
+}
