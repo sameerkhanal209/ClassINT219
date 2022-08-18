@@ -1,0 +1,66 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+.title{
+    text-align: center;
+    padding: 30px 0;
+    font-size: 2rem;
+}
+
+.menu{
+    max-width: 50%;
+    margin:0 auto;
+    text-align: center;
+    background-color: aliceblue;
+    padding:20px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: navy;
+    margin:0 20px;
+    font-weight: bold;
+}
+
+article{
+    padding:100px 10px;
+}
+
+h1, h2{
+    font-family: Arial;
+
+    margin:0;
+    padding:0;
+}
+
+article h2{
+    border-left: 3px solid black;
+    padding-left: 15px;
+}
+
+p{
+    color: white;
+    font-size: 24px;
+}
+
+/* Using IDs for individual styling in CSS */
+
+#article1{
+    background-color: blue;
+}
+
+#article2{
+    background-color: gold;
+}
+
+#article3{
+    background-color: green;
+}
+
+/* Using classes, which can be used for many elements */
+
+.article{
+    font-style: italic;
+}

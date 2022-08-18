@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.link{
+    padding: 20px;
+}
+h1{
+
+    padding: 10px;
+}
+
+.container{
+    border: 10px ridge green;
+    border-bottom-width: 20px;
+    border-top: 10px dotted aqua;
+    border-bottom-color: orange;
+    font-size: 1.5em;
+    margin: 1em;
+    padding: 1em;
+    outline: 5px solid gold;
+    outline-offset: 10px;
+}
+
+div{
+    padding: 20px;
+}
+
+p{
+    padding: 10px;
+}
+
+.solid{
+    border:5px solid orange;
+}
+
+.ridge{
+    border:15px ridge orange;
+}
+
+.dotted{
+    border:5px dotted orange;
+}
+
+.circle{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: block;
+    background-color: orange;
+    border: 5px solid red;
+    padding: 10px;
+}
+
+
+/* Typography Page */
