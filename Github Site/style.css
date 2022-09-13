@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+}
+html,
+body{
+    height: 100%;
+    margin:0;
+    padding: 0;
+
+    font-family: sans-serif;
+}
+.container{
+    padding: 0px 100px;
+}
+.main{
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+}
+
+.main a,
+.main a svg,
+.main a svg path{
+    color: #fff;
+}
+.header{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+header .navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+}
+
+header nav ul li{
+    display: inline-block;
+}
+
+header nav ul li a{
+    text-decoration: none;
+}
+
+header .right-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .right-menu input{
+    opacity: .6;
+    padding: 10px 20px;
+    background-color: #000;
+    outline: none;
+    border: none;
+
+    margin:0 20px;
+}
+
+header .btn{
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 8px;
+}

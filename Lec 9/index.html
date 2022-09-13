@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 9</title>
+</head>
+<body>
+    
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        .header{
+            padding: 20px;
+            background-color: #333;
+        }
+        .header h1{
+            margin:0;
+            padding:0;
+            color: #fff;
+        }
+
+        .main{
+            padding:100px 50px;
+            background-color: rgb(214, 234, 227);
+        }
+
+        .main .click-me{
+            margin: 200px;
+            padding: 90px;
+            background-color: #fff;
+        }
+
+        .main .click-me-2{
+            margin: 200px;
+            padding: 90px;
+            background-color: #fff;
+        }
+
+        .red{
+            color: red;
+        }
+    </style>
+
+    <div>
+
+        <div class="header">
+            <h1>My Site</h1>
+        </div>
+
+        <div class="main">
+
+            <div class="click-me">
+                Click Me
+            </div>
+
+            <div class="click-me-2">
+                Click Me Second
+            </div>
+
+        </div>
+
+        <div class="main">
+            <div class="click-here">
+                <h3>
+                    Click Me
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore asperiores voluptate pariatur illo qui non iusto ipsum nam doloribus fuga vero nulla beatae quis, magnam fugiat sapiente alias earum quidem!</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        const initApp = () => {
+
+            let counts = [0,0]
+
+            const box = document.querySelector('.click-me')
+
+            box.addEventListener("click", (e)=>{
+                counts[0]++
+                e.target.textContent = "Clicked " + counts[0] + " Times!"
+            })
+
+
+            // Adding and removing event listeners
+
+            const box2 = document.querySelector('.click-me-2')
+
+
+            function clickMe2(e){
+                counts[1]++
+                e.target.textContent = "Clicked " + counts[1] + " Times!"
+            }
+            
+            box2.addEventListener("click", clickMe2)
+
+            box2.removeEventListener("click", clickMe2)
+
+            //Re-adding it again
+
+            box2.addEventListener("click", clickMe2)
+
+            // Bubbling and capturing
+
+            let div = document.querySelector(".click-here")
+            div.addEventListener("click", (e)=>{
+                div.style.backgroundColor = "red"
+            }, true)
+
+            let h3 = document.querySelector("h3")
+            h3.addEventListener("click", (e)=>{
+                h3.style.backgroundColor = "green"
+            }, true)
+
+            let para = document.querySelector("p")
+            para.addEventListener("click", (e)=>{
+                para.style.backgroundColor = "blue"
+            }, true)
+
+
+        }
+
+        document.addEventListener("readystatechange", (e)=>{
+            if (e.target.readyState) {
+               console.log("ReadyState Complete")
+               initApp()
+            }
+        })
+        
+    </script>
+</body>
+</html>

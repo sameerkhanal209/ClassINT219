@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <date class="date"></date>
+    </div>
+
+
+
+    <input type="text" placeholder="Item name" id="itemName">
+    <button id="submitButton">Add Item</button>
+   
+
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+
+    <div>
+        <img height="400" src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200" id="image">
+    </div>
+
+    <div>
+        <button onmouseover="changeImg('bike')" onmouseout="changeImg('car')">Change</button>
+    </div>
+
+    <div>
+        <img class="bulb" onmouseover="changeBulb('on')" onmouseout="changeBulb('off')" src="/img/bulb_off.jpg" />
+    </div>
+
+    <div>
+        <img class="bulb2" onclick="changeBulb2()" src="/img/bulb_off.jpg" />
+    </div>
+
+
+    <div class="slideshow">
+        <img class="slide" src="">
+        <div>
+            <button onclick="startSlideShow()">Start Slideshow</button>
+            <button>Stop Slideshow</button>
+        </div>
+    </div>
+
+    <script>
+        let slides = [
+            "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/2020-Chevrolet-Corvette-Stingray/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=960",
+            "https://cdn.motor1.com/images/mgl/mrz1e/s3/coolest-cars-feature.jpg",
+            "https://imageio.forbes.com/specials-images/imageserve/5f962df3991e5636a2f68758/0x0.jpg?format=jpg&crop=812,457,x89,y103,safe&width=1200"
+        ]
+
+        let slide = 0
+
+        function increaseSlide(){  
+
+            document.querySelector('.slide').src = slides[slide]
+
+            slide++
+            if(slide > slides.length-1){
+                slide = 0;
+            }
+        }
+
+        function startSlideShow(){
+            setInterval(increaseSlide, 1000)
+        }
+
+        function stopSlideshow(){
+            clearInterval(increaseSlide)
+        }
+    </script>
+
+
+    <script>
+
+        let itemForm = document.getElementById("itemName")
+        let btn = document.getElementById("submitButton")
+
+        let list = document.getElementById('list')
+
+        btn.addEventListener("click", ()=>{
+            html = "<li>" + itemForm.value + "</li>"
+            list.innerHTML = list.innerHTML + html
+        })
+        
+
+        function changeImg(veh){
+            let carLink = "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200"
+            let bikeLink = "https://bd.gaadicdn.com/processedimages/revolt-motors/rv-400/640X309/rv-400611a424cad9e9.jpg"
+
+            if(veh == "car"){
+                document.getElementById("image").src = carLink
+            } else {
+                document.getElementById("image").src = bikeLink
+            }
+            
+        }
+
+        function changeBulb(value){
+            if (value == "on"){
+                document.querySelector('.bulb').src = "/img/bulb_on.jpg"
+            } else {
+                document.querySelector('.bulb').src = "/img/bulb_off.jpg"
+            }
+        }
+
+        let bulbOn = true
+        function changeBulb2(){
+
+            if(bulbOn){
+                document.querySelector('.bulb2').src = "/img/bulb_on.jpg"
+                
+            } else {
+                document.querySelector('.bulb2').src = "/img/bulb_off.jpg"
+               
+            }
+
+            bulbOn = !bulbOn
+            
+        }
+
+        let titles = ["Hello!", "Welcome", "to", "my", "site"]
+        ind = 0;
+
+        function changeTitle(){
+            document.title = titles[ind]
+            ind++
+
+            if(ind > titles.length - 1){
+                ind = 0;
+            }
+        }
+
+        setInterval(changeTitle, 1000);
+
+        function showDate(){
+            document.querySelector('date').innerHTML = new Date().toLocaleTimeString();
+        }
+
+        setInterval(showDate, 1000)
+
+
+    </script>
+</body>
+</html>

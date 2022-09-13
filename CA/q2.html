@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Color Change</title>
+</head>
+
+<body>
+
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        #div1{
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+
+<div  id="div1" ></div>
+
+    <script>
+
+        /* Write your code here*/
+        let colors = [
+            "red",
+            "green",
+            "blue",
+            "black",
+            "orange",
+            "pink"
+        ]
+
+        let color = 0
+        let interval
+
+        function changeColor(){
+            document.getElementById('div1').style.backgroundColor = colors[color]
+            console.log(colors[color])
+
+            color = color + 1
+            if(color > colors.length - 1){
+                color = 0
+            }
+        }
+
+        setInterval(changeColor, 2000)
+        
+
+    </script>
+
+</body>

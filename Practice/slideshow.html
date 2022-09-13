@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+</head>
+<body>
+    <div class="slideshow">
+        <img src="images/4.avif" class="slide">
+    </div>
+
+    <div>
+        <button onclick="start()">Start Slideshow</button>
+        <button onclick="stop()">Stop Slideshow</button>
+    </div>
+
+    <script>
+        let images = [
+            "images/1.avif",
+            "images/2.avif",
+            "images/3.avif",
+            "images/4.avif",
+        ]
+        let slideIndicator = 0;
+        let interval
+
+        let slide = document.querySelector('.slide')
+
+        function setSlideshow(){
+
+            if(slideIndicator > images.length - 1){
+                slideIndicator = 0
+            }
+
+            slide.src= images[slideIndicator]
+            slideIndicator = slideIndicator + 1
+        }
+
+        function start(){
+            interval = setInterval(setSlideshow, 1300)
+        }
+
+        function stop(){
+            if(interval){
+                clearInterval(interval)
+            }
+            
+        }
+
+        start()
+            
+    </script>
+</body>
+</html>

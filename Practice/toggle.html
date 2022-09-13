@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        form{
+            display: none;
+        }
+        .showCss{
+            display: block !important;
+        }
+    </style>
+
+    <form>
+        <input>
+    </form>
+
+    <button onclick="show()">Show/Hide</button>
+
+    <script>
+        
+        let showIt = true
+        function show(){
+
+            let form = document.querySelector('form')
+
+            if(showIt == true){
+                form.classList.add('showCss')
+                showIt = !showIt
+            } else {
+                form.classList.remove('showCss')
+                showIt = !showIt
+            }
+        }
+    </script>
+</body>
+</html>

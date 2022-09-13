@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA</title>
+</head>
+<body>
+    <div>
+        <label for="firstName">
+            First Name:
+
+            <input id="firstName" type="text" placeholder="First Name">
+        </label>
+        <br>
+        <label for="lastName">
+            Last Name:
+
+            <input id="lastName" type="text" placeholder="First Name">
+        </label>
+        <br>
+        <label for="firstName">
+            Gender:
+
+            <input type="radio" value="Male" name="gender" id="gender"> Male
+            <input type="radio" value="Female" name="gender" id="gender"> Female
+        </label>
+        <br>
+
+        <label for="firstName">
+            Hobbies:
+
+            <input type="checkbox" name="hobbies" id="cricket"> Cricket
+            <input type="checkbox" name="football" id="football"> Football
+        </label>
+        <br>
+        <button onclick="show()">Submit</button>
+    </div>
+    
+    <script>
+        function show(){
+            let firstName = document.getElementById('firstName').value
+            let lastName = document.getElementById('lastName').value
+
+            let gender = document.querySelectorAll('#gender')
+            if(gender[0].checked){
+                gender = "Male"
+            } else {
+                gender = "Female"
+            }
+
+            let cricket = document.getElementById('cricket').checked
+            let football = document.getElementById('football').checked
+
+            let hobbies = []
+            if(cricket)
+                hobbies.push("Cricket")
+
+            if(football)
+                hobbies.push("Football")
+
+            alert("Name: " + firstName + ", LastName: " + lastName + ", Gender: " + gender + ", Hobbies: " + hobbies.map(e=>{return e }).join(', '))
+            
+        }
+    </script>
+
+<style>
+    
+</style>
+
+</body>
+</html>
